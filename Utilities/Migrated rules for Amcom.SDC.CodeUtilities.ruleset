@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RuleSet Name="Migrated rules for Amcom.SDC.CodeUtilities.ruleset" Description="This rule set was created from the CodeAnalysisRules property for the &quot;Test (Any CPU)&quot; configuration in project &quot;C:\Development\AAA MANSVN\IntegrationServiceFramework\Amcom.SDC.BaseServices\Utilities\Amcom.SDC.CodeUtilities.csproj&quot;." ToolsVersion="10.0">
+  <RuleHintPaths>
+    <Path>\rules</Path>
+  </RuleHintPaths>
+</RuleSet>
