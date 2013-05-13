@@ -1327,7 +1327,7 @@ Public Function CityFromIP(ByVal ip As String) As String
                     End If
                     logtext = FormatForConsoleLog(level, message) '), stackframe)
                     If _maxWordWrapLength = -1 Then
-                        _maxWordWrapLength = App.Config.GetInteger(ConfigSection.diagnostics, "console\maxWidth", 0)
+						_maxWordWrapLength = App.Config.GetInteger(ConfigSection.diagnostics, "console/maxWidth", 0)
                     End If
                     If _maxWordWrapLength > 0 Then
                         msgbuffer = WordWrap(logtext, _maxWordWrapLength)
@@ -1344,8 +1344,8 @@ Public Function CityFromIP(ByVal ip As String) As String
                 End If
             End If
 
-
-            Dim namePath As String = GetLogName(alternateLogFolder)
+			Dim namePath As String = GetLogName(alternateLogFolder)
+			Dim separateNamePath As String = Path.Combine(Path.GetDirectoryName(namePath), GetThreadName() + ".txt")
             Try
                 Select Case mConfig.LogFileTraceFormat
                     Case LogFileTraceFormats.legacy, LogFileTraceFormats.flatfile
@@ -1364,8 +1364,8 @@ Public Function CityFromIP(ByVal ip As String) As String
                             sr2.Seek(0, SeekOrigin.End)
                             Using writer As New StreamWriter(sr2)
                                 writer.WriteLine(FormatForConsoleLog(level, message)) ', stackframe))
-                            End Using
-                        End If
+							End Using
+						End If
                     Case LogFileTraceFormats.xml
                         If values.GetUpperBound(0) > -1 Then
                             message = String.Format(message, FormatValues(values))

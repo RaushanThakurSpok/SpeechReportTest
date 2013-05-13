@@ -229,38 +229,45 @@ Public Class ConfigFile
             Try
                 Dim p As String = "//configuration/" & section.ToString.ToLower
                 If section = ConfigSection.configuration Then p = "//" & section.ToString.ToLower
-                Dim fullpath As String = p & "/" & xpath
-                Dim value As String = mSettings.SelectSingleNode(fullpath).InnerText
-                Dim fileEncrypt As Boolean = False
-                Dim attr As XmlAttribute = mSettings.SelectSingleNode(fullpath).Attributes.GetNamedItem("encrypt")
-                If attr IsNot Nothing Then
-                    fileEncrypt = (attr.Value.ToLower = "true") OrElse (attr.Value.ToLower = "yes")
-                End If
-                If forceEncrypt Or fileEncrypt Then
-                    If Not String.IsNullOrEmpty(value) Then
-                        WriteString(section, xpath, value, True)
-                    End If
-                End If
-                Return CInt(DecryptConfigString(value))
-            Catch ex As XmlException
-                CheckForConfigurationError(section, xpath)
-                Return [default]
-            Catch ex As XPathException
-                CheckForConfigurationError(section, xpath)
-                Return [default]
-            Catch ex As NullReferenceException
-                'CheckForConfigurationError(section, xpath)
-                If createIfNotFound Then
-                    AddSetting(section, xpath, [default], forceEncrypt)
-                End If
-                Return [default]
-            Catch ex As InvalidCastException
-                'CheckForConfigurationError(section, xpath)
-                If createIfNotFound Then
-                    AddSetting(section, xpath, [default], forceEncrypt)
-                End If
-                Return [default]
-            End Try
+				Dim fullpath As String = p & "/" & xpath
+				Dim checkNode = mSettings.SelectSingleNode(fullpath)
+				If (checkNode Is Nothing) Then
+					If createIfNotFound Then
+						AddSetting(section, xpath, [default], forceEncrypt)
+					End If
+					Return [default]
+				End If
+				Dim value As String = checkNode.InnerText
+				Dim fileEncrypt As Boolean = False
+				Dim attr As XmlAttribute = mSettings.SelectSingleNode(fullpath).Attributes.GetNamedItem("encrypt")
+				If attr IsNot Nothing Then
+					fileEncrypt = (attr.Value.ToLower = "true") OrElse (attr.Value.ToLower = "yes")
+				End If
+				If forceEncrypt Or fileEncrypt Then
+					If Not String.IsNullOrEmpty(value) Then
+						WriteString(section, xpath, value, True)
+					End If
+				End If
+				Return CInt(DecryptConfigString(value))
+			Catch ex As XmlException
+				CheckForConfigurationError(section, xpath)
+				Return [default]
+			Catch ex As XPathException
+				CheckForConfigurationError(section, xpath)
+				Return [default]
+			Catch ex As NullReferenceException
+				'CheckForConfigurationError(section, xpath)
+				If createIfNotFound Then
+					AddSetting(section, xpath, [default], forceEncrypt)
+				End If
+				Return [default]
+			Catch ex As InvalidCastException
+				'CheckForConfigurationError(section, xpath)
+				If createIfNotFound Then
+					AddSetting(section, xpath, [default], forceEncrypt)
+				End If
+				Return [default]
+			End Try
         End SyncLock
     End Function
 
@@ -269,8 +276,14 @@ Public Class ConfigFile
             Try
                 Dim p As String = "//configuration/" & section.ToString.ToLower
                 If section = ConfigSection.configuration Then p = "//" & section.ToString.ToLower
-                Dim fullpath As String = p & "/" & xpath
-                Return DecryptNode(mSettings.SelectSingleNode(fullpath))
+				Dim fullpath As String = p & "/" & xpath
+				Dim selectedNode = mSettings.SelectSingleNode(fullpath)
+
+				If (selectedNode Is Nothing) Then
+					Return Nothing
+				End If
+
+				Return DecryptNode(selectedNode)
             Catch ex As XmlException
                 CheckForConfigurationError(section, xpath)
                 Return Nothing
