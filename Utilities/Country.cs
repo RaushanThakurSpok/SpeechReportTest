@@ -19,7 +19,7 @@ namespace Utilities
 
         static Country()
         {
-            Dictionary<string, Country> countryMap = new Dictionary<string, Country>();
+            var countryMap = new Dictionary<string, Country>();
 
             countryMap["AF"] = new Country("AF", "Afghanistan");
             countryMap["AL"] = new Country("AL", "Albania");
