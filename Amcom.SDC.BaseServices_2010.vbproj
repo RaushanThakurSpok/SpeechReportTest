@@ -217,10 +217,10 @@
       <CustomToolNamespace>My</CustomToolNamespace>
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
+    <None Include="sdc.snk.pfx" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\sdclogo.bmp" />
-    <None Include="sdc.snk.pfx" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Utilities\Amcom.SDC.CodeUtilities_2010.csproj">
