@@ -324,6 +324,8 @@ Namespace TCP
 			WaitForSslClient()
 		End Sub
 		Private Sub HandleConnection(ByVal parameter As IAsyncResult)
+			Console.WriteLine("Number of active threads is " + Process.GetCurrentProcess().Threads.Count.ToString())
+
 			Dim connection As ClientConnection = Nothing
 			Try
 				connection = CreateClientConnection(parameter)
