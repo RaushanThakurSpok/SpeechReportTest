@@ -290,8 +290,7 @@ Namespace TCP
 
                 If (sData.Length > 0) Then
                     App.TraceLog(TraceLevel.Verbose, "HandleDataReceived(): New Data Count       = {0}", e.Data.Length)
-                    App.TraceLog(TraceLevel.Verbose, "HandleDataReceived(): Data{0}{1}", vbCrLf, e.Data)
-                    _Buffer = _Buffer & sData
+					_Buffer = _Buffer & sData
                     _Buffer.Replace(Chr(0), "").Trim()
                 End If
             End SyncLock
