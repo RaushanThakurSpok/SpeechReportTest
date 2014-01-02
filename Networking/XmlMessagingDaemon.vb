@@ -183,7 +183,6 @@ Namespace TCP
                         Dim sAddress As String = e.EndPoint.ToString
                         '            
                         If (e.UTF8.Length > 0) Then
-                            App.TraceLog(TraceLevel.Verbose, "XmlMessagingDaemon(): Data Received {0}{1}", vbCrLf, e.UTF8)
                             If Not mClients.ContainsKey(sAddress) Then
                                 App.TraceLog(TraceLevel.Error, "Received data for {0}, but no buffer found.", sAddress)
                                 Exit Sub

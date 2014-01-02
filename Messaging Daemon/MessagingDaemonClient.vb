@@ -274,8 +274,6 @@ Namespace TCP
         Private Sub HandleDataReceived(ByVal sender As Object, ByVal e As ClientDataReceivedEventArgs)
             Dim sData As String
 
-            App.TraceLog(TraceLevel.Verbose, "HandleDataReceived(): Current Buffer Count = {0}", _Buffer.Length)
-
             SyncLock myLock
                 Select Case _encoding
                     Case MDMEncoding.ASCII
@@ -289,7 +287,6 @@ Namespace TCP
                 End Select
 
                 If (sData.Length > 0) Then
-                    App.TraceLog(TraceLevel.Verbose, "HandleDataReceived(): New Data Count       = {0}", e.Data.Length)
 					_Buffer = _Buffer & sData
                     _Buffer.Replace(Chr(0), "").Trim()
                 End If
