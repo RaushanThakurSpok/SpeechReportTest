@@ -208,7 +208,7 @@ Namespace TCP
                         '
                         _TCPClient.Connect(_PrimaryServerName, _ServerPort)
                     Catch ex As AmcomException
-                        App.TraceLog(_myLogLevel, _ServerPort)
+						App.TraceLog(_myLogLevel, "Error in MessageDaemonClient.BeginConnection: " & ex.Message & ", callstack: " & ex.CallStack & ", full exception: " & ex.ToString)
                     Catch ex As Exception
                         App.TraceLog(_myLogLevel, "Error in MessageDaemonClient.BeginConnection: " & ex.ToString)
                     End Try
