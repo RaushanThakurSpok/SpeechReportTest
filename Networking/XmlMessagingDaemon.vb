@@ -121,7 +121,7 @@ Namespace TCP
 
                             Try
                                 Dim doc As New XmlDocument
-                                s = s.Replace(vbCrLf, "")
+                                s = s.Replace(vbCrLf, Char.ToString(Chr(10)))
                                 doc.LoadXml(s)
                                 'm = New MessagingDaemonMessage
                                 '
