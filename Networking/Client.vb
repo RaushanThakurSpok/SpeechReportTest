@@ -122,9 +122,20 @@ Namespace TCP
             End Get
         End Property
         Public ReadOnly Property IsConnected() As Boolean
-            Get
-                Return mConnected
-            End Get
+			Get
+				If mConnected Then
+					Return mConnected
+				Else
+					If mClient.Connected Then
+						mConnected = True
+						GenerateConnectEvent()
+						WaitForRead()
+						Return mConnected
+					Else
+						Return mConnected
+					End If
+				End If
+			End Get
         End Property
         Public Property ServerAddress() As String
             Get
@@ -182,13 +193,14 @@ Namespace TCP
                 If _sslServerName.Length = 0 Then
                     Throw New InvalidOperationException("No SSL ServerName supplied")
                 End If
-
-            End If
-            If _transport = TransportType.ssl Then
-                ConnectSSL(mServer, _sslServerName)
-            Else
-                Connect(mServer, mPort)
-            End If
+			End If
+			If _transport = TransportType.ssl Then
+				App.TraceLog(TraceLevel.Info, "TCPCLIENT Connect: Attempt to connect: Server={0}; sslServer={1}", mServer, _sslServerName)
+				ConnectSSL(mServer, _sslServerName)
+			Else
+				App.TraceLog(TraceLevel.Info, "TCPCLIENT Connect: Attempt to connect: Server={0}; Port={1}", mServer, mPort)
+				Connect(mServer, mPort)
+			End If
         End Sub
         Public Sub Connect(ByVal server As String, ByVal port As String)
 
@@ -203,7 +215,7 @@ Namespace TCP
             End If
             Do
                 Try
-                    mClient.Connect(server, port)
+					mClient.Connect(server, CInt(port))
                     mServer = server
                     mPort = port
                     Exit Do
@@ -217,11 +229,13 @@ Namespace TCP
                         Throw New AmcomException("Failed to connect to " & server & ", port " & port & ": " & ex.Message, ex)
                     End If
                 End Try
-            Loop
-            mConnected = True
-            GenerateConnectEvent()
-            WaitForRead()
-        End Sub
+			Loop
+			If mClient.Connected Then
+				mConnected = True
+				GenerateConnectEvent()
+				WaitForRead()
+			End If
+		End Sub
         Public Sub ConnectAsync()
             If mConnected Then
                 Throw (New AmcomException("Server already connected", New InvalidOperationException("already connected to server")))
