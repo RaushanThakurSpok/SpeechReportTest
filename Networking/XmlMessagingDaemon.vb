@@ -263,13 +263,33 @@ Namespace TCP
         Public Sub [Stop]()
             _Stop = True
             If mRemoteServer Is Nothing Then Exit Sub
-            App.TraceLog(TraceLevel.Info, "Messaging Daemon Stopping...")
-            RemoveHandler mRemoteServer.Connected, AddressOf ClientConnected
-            RemoveHandler mRemoteServer.Disconnected, AddressOf ClientDisconnected
-            RemoveHandler mRemoteServer.DataReceived, AddressOf ClientDataReceived
-            RemoveHandler mRemoteServer.ErrorOccurred, AddressOf ClientErrorOccurred
-            mRemoteServer.Stop()
-        End Sub
+			App.TraceLog(TraceLevel.Info, "Messaging Daemon Stopping...")
+
+			For Each client As KeyValuePair(Of String, XmlMessagingDaemon.Client) In mClients
+				Dim endpoint As String = client.Key
+				Dim split() As String = endpoint.Split(":".ToCharArray())
+				Dim ipAddress As IPAddress
+				If Not ipAddress.TryParse(split(0), ipAddress) Then
+					Continue For
+				End If
+
+				Dim port As Integer
+				If Not Int32.TryParse(split(1), port) Then
+					Continue For
+				End If
+
+				Dim ep As New IPEndPoint(ipAddress, port)
+				Dim tcsea As New TCPConnectionStateEventArgs(ep, "Plugin shutting down")
+
+				RaiseEvent DaemonClientDisconnected(Me, tcsea)
+			Next
+
+			RemoveHandler mRemoteServer.Connected, AddressOf ClientConnected
+			RemoveHandler mRemoteServer.Disconnected, AddressOf ClientDisconnected
+			RemoveHandler mRemoteServer.DataReceived, AddressOf ClientDataReceived
+			RemoveHandler mRemoteServer.ErrorOccurred, AddressOf ClientErrorOccurred
+			mRemoteServer.Stop()
+		End Sub
 #End Region
 
     End Class
