@@ -217,6 +217,7 @@
       <CustomToolNamespace>My</CustomToolNamespace>
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
+    <None Include="packages.config" />
     <None Include="sdc.snk.pfx" />
   </ItemGroup>
   <ItemGroup>
@@ -278,4 +279,12 @@
   <Target Name="AfterBuild">
   </Target>
   -->
+  <Target Name="BeforeBuild" Condition="Exists('$(ProjectDir).\packages\AmcomBuildVersioning.1.0.0.51')">
+    <JenkinsVersion DestinationFile="My Project\VersionInfo.vb" />
+  </Target>
+  <UsingTask TaskName="JenkinsVersion" Condition="'$(TargetFrameworkVersion)' != 'v3.5' AND Exists('$(ProjectDir).\packages\AmcomBuildVersioning.1.0.0.51\lib\net40\Amcom.Build.Versioning.dll')" AssemblyFile="$(ProjectDir).\packages\AmcomBuildVersioning.1.0.0.51\lib\net40\Amcom.Build.Versioning.dll" />
+  <UsingTask TaskName="JenkinsVersion" Condition="'$(TargetFrameworkVersion)' == 'v3.5' AND Exists('$(ProjectDir).\packages\AmcomBuildVersioning.1.0.0.51\lib\net35\Amcom.Build.Versioning.dll')" AssemblyFile="$(ProjectDir).\packages\AmcomBuildVersioning.1.0.0.51\lib\net35\Amcom.Build.Versioning.dll" />
+  <ItemGroup>
+    <Compile Include="My Project\VersionInfo.vb" />
+  </ItemGroup>
 </Project>

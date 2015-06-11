@@ -10,12 +10,12 @@ Imports System.Runtime.InteropServices
 
 <Assembly: AssemblyTitle("AmcomException")> 
 <Assembly: AssemblyDescription("")> 
-<Assembly: AssemblyCompany("Amcom Software, Inc.")> 
-<Assembly: AssemblyProduct("Base Services Library")> 
-<Assembly: AssemblyCopyright("Copyright © 2007-2012 Amcom Software , Inc.")> 
+<Assembly: AssemblyCompany("Amcom Software")> 
+<Assembly: AssemblyProduct("Amcom Base Services Library")> 
+<Assembly: AssemblyCopyright("Amcom Software 2015")> 
 <Assembly: AssemblyTrademark("")> 
 
-<Assembly: ComVisible(False)>
+<Assembly: ComVisible(False)> 
 
 'The following GUID is for the ID of the typelib if this project is exposed to COM
 <Assembly: Guid("be14c436-8e02-47ba-ba42-8a95466df5cc")> 
@@ -31,5 +31,4 @@ Imports System.Runtime.InteropServices
 ' by using the '*' as shown below:
 ' <Assembly: AssemblyVersion("1.0.*")> 
 
-<Assembly: AssemblyVersion("1.0.1.16")> 
-<Assembly: AssemblyFileVersion("1.0.1.22")> 
+
