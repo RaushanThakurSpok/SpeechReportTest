@@ -2,6 +2,8 @@
 Imports System.Reflection
 Imports Utilities.Code.CodeUtilities
 Imports System.Threading
+Imports Utilities
+
 Namespace Notifications
     Public NotInheritable Class EmailNotification
         Public Shared Event NotificationCompleted As EventHandler(Of NotificationCompletedEventArgs)

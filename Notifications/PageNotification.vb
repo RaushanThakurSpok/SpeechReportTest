@@ -1,6 +1,7 @@
 ﻿Imports Amcom.SDC.BaseServices.TCP
 Imports System.Threading
 Imports System.Reflection
+Imports Utilities
 
 Namespace Notifications
     Public NotInheritable Class PageNotification
