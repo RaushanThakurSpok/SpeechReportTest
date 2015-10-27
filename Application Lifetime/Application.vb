@@ -1349,13 +1349,14 @@ Public Function CityFromIP(ByVal ip As String) As String
             Dim namePath As String = GetLogName(alternateLogFolder)
             Dim separateNamePath As String = Path.Combine(Path.GetDirectoryName(namePath), GetThreadName() + ".txt")
             Try
-                Select Case mConfig.LogFileTraceFormat
-                    Case LogFileTraceFormats.legacy, LogFileTraceFormats.flatfile
-                        If values.GetUpperBound(0) > -1 Then
-                            message = String.Format(message, FormatValues(values))
-                        End If
-                        If level <= mConfig.LogfileTraceLevel Then
-                            SyncLock _traceLogLock  'Attempt to protect the log file across multiple threads
+                SyncLock _traceLogLock  'Attempt to protect the log file across multiple threads
+                    Select Case mConfig.LogFileTraceFormat
+                        Case LogFileTraceFormats.legacy, LogFileTraceFormats.flatfile
+                            If values.GetUpperBound(0) > -1 Then
+                                message = String.Format(message, FormatValues(values))
+                            End If
+                            If level <= mConfig.LogfileTraceLevel Then
+
                                 If Not My.Computer.FileSystem.FileExists(namePath) Then
                                     Dim sr As New FileStream(namePath, FileMode.OpenOrCreate, FileAccess.ReadWrite, FileShare.Read)
                                     sr.Seek(0, SeekOrigin.End)
@@ -1368,17 +1369,18 @@ Public Function CityFromIP(ByVal ip As String) As String
                                 Using writer As New StreamWriter(sr2)
                                     writer.WriteLine(FormatForConsoleLog(level, message)) ', stackframe))
                                 End Using
-                            End SyncLock
-                        End If
-                    Case LogFileTraceFormats.xml
-                        If values.GetUpperBound(0) > -1 Then
-                            message = String.Format(message, FormatValues(values))
-                        End If
-                        If Not My.Computer.FileSystem.FileExists(namePath) Then
-                            CreateInitalXMLLog(namePath) ', modInfo)
-                        End If
-                        AppendXMLLog(namePath, level, message)
-                End Select
+                            End If
+                        Case LogFileTraceFormats.xml
+                            If values.GetUpperBound(0) > -1 Then
+                                message = String.Format(message, FormatValues(values))
+                            End If
+                            If Not My.Computer.FileSystem.FileExists(namePath) Then
+                                CreateInitalXMLLog(namePath) ', modInfo)
+                            End If
+                            AppendXMLLog(namePath, level, message)
+                    End Select
+                End SyncLock
+
             Catch ex As IOException
                 'we cannot call Exception log because we are having problems writing to the trace log
                 WriteException(New AmcomException("Unable to write a message to the trace log", ex))
