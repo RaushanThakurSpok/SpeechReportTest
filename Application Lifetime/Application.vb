@@ -94,6 +94,8 @@ Public Class Application
     Public Delegate Sub SystemTimeAdjusted(ByVal sender As Object, ByVal e As SystemTimeAdjustedArgs)
     Private _staHandlers As List(Of SystemTimeAdjusted)
     Private _usingAppPathAsBase = False
+    Private _traceLogLock As New Object
+
 #Region "Properties"
     Public Property ApplicationName() As String
         Get
@@ -1353,18 +1355,20 @@ Public Function CityFromIP(ByVal ip As String) As String
                             message = String.Format(message, FormatValues(values))
                         End If
                         If level <= mConfig.LogfileTraceLevel Then
-                            If Not My.Computer.FileSystem.FileExists(namePath) Then
-                                Dim sr As New FileStream(namePath, FileMode.OpenOrCreate, FileAccess.ReadWrite, FileShare.Read)
-                                sr.Seek(0, SeekOrigin.End)
-                                Using writer As New StreamWriter(sr)
-                                    writer.WriteLine(FormatForConsoleLog(TraceLevel.Info, App.Name & " " & My.Application.Info.Version.ToString)) ', stackframe))
+                            SyncLock _traceLogLock  'Attempt to protect the log file across multiple threads
+                                If Not My.Computer.FileSystem.FileExists(namePath) Then
+                                    Dim sr As New FileStream(namePath, FileMode.OpenOrCreate, FileAccess.ReadWrite, FileShare.Read)
+                                    sr.Seek(0, SeekOrigin.End)
+                                    Using writer As New StreamWriter(sr)
+                                        writer.WriteLine(FormatForConsoleLog(TraceLevel.Info, App.Name & " " & My.Application.Info.Version.ToString)) ', stackframe))
+                                    End Using
+                                End If
+                                Dim sr2 As New FileStream(namePath, FileMode.OpenOrCreate, FileAccess.ReadWrite, FileShare.Read)
+                                sr2.Seek(0, SeekOrigin.End)
+                                Using writer As New StreamWriter(sr2)
+                                    writer.WriteLine(FormatForConsoleLog(level, message)) ', stackframe))
                                 End Using
-                            End If
-                            Dim sr2 As New FileStream(namePath, FileMode.OpenOrCreate, FileAccess.ReadWrite, FileShare.Read)
-                            sr2.Seek(0, SeekOrigin.End)
-                            Using writer As New StreamWriter(sr2)
-                                writer.WriteLine(FormatForConsoleLog(level, message)) ', stackframe))
-                            End Using
+                            End SyncLock
                         End If
                     Case LogFileTraceFormats.xml
                         If values.GetUpperBound(0) > -1 Then
