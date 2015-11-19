@@ -127,10 +127,11 @@ Namespace TCP
 					Return mConnected
 				Else
 					If mClient.Connected Then
-						mConnected = True
-						GenerateConnectEvent()
-						WaitForRead()
-						Return mConnected
+                        mStream = mClient.GetStream()
+                        mConnected = True
+                        GenerateConnectEvent()
+                        WaitForRead()
+                        Return mConnected
 					Else
 						Return mConnected
 					End If
@@ -231,7 +232,8 @@ Namespace TCP
                 End Try
 			Loop
 			If mClient.Connected Then
-				mConnected = True
+                mStream = mClient.GetStream()
+                mConnected = True
 				GenerateConnectEvent()
 				WaitForRead()
 			End If
@@ -322,6 +324,8 @@ Namespace TCP
                 GenerateDisconnectEvent(ex.Message)
                 Exit Sub
             End Try
+
+            mStream = mClient.GetStream()
             mConnected = True
             GenerateConnectEvent()
             WaitForRead()
@@ -365,6 +369,11 @@ Namespace TCP
                         RaiseEvent DataReceived(Me, New ClientDataReceivedEventArgs(temp))
                     End If
                 End If
+            Else
+                'DE19610 related issue
+                'if no bytes were read,and no exception, assume disconnection.
+                Disconnect()
+                Exit Sub
             End If
             Try
                 If _sslStream IsNot Nothing Then
@@ -464,7 +473,7 @@ Namespace TCP
         End Sub
 
         Private Sub WaitForRead()
-            mStream = mClient.GetStream()
+            'mStream = mClient.GetStream()  moved to  HandleTCPConnect() 
             mStream.BeginRead(mBuffer, 0, mClient.ReceiveBufferSize, AddressOf HandleTCPRead, mBuffer)
         End Sub
 #End Region
