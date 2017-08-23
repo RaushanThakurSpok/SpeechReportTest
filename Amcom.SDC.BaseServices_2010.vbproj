@@ -24,7 +24,7 @@
     </UpgradeBackupLocation>
     <OldToolsVersion>3.5</OldToolsVersion>
     <SignAssembly>true</SignAssembly>
-    <AssemblyOriginatorKeyFile>sdc.snk.pfx</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>sdc.snk</AssemblyOriginatorKeyFile>
     <IsWebBootstrapper>true</IsWebBootstrapper>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <PublishUrl>http://localhost/SDCSolutions.BaseServices/</PublishUrl>
@@ -218,7 +218,7 @@
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
     <None Include="packages.config" />
-    <None Include="sdc.snk.pfx" />
+    <None Include="sdc.snk" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\sdclogo.bmp" />
