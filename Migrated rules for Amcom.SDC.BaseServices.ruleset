@@ -1,6 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<RuleSet Name="Migrated rules for Amcom.SDC.BaseServices.ruleset" Description="This rule set was created from the CodeAnalysisRules property for the &quot;Debug (x86)&quot; configuration in project &quot;C:\VisualStudio08Projects\wake-up\Source\Amcom.HealthStatusMonitor\Amcom.SDC.BaseServices\Amcom.SDC.BaseServices.vbproj&quot;." ToolsVersion="10.0">
-  <RuleHintPaths>
-    <Path>C:\Program Files (x86)\Microsoft Visual Studio 9.0\Team Tools\Static Analysis Tools\FxCop\\Rules</Path>
-  </RuleHintPaths>
-</RuleSet>

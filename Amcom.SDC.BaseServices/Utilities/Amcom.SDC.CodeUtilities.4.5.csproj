@@ -1,0 +1,399 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{DB173085-8CC4-4C49-8AA4-328442ABC887}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Amcom.SDC.CodeUtilities</RootNamespace>
+    <AssemblyName>Amcom.SDC.CodeUtilities</AssemblyName>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>PublicDomain.snk</AssemblyOriginatorKeyFile>
+    <ApplicationIcon>pd.ico</ApplicationIcon>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;NOVJSLIB</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\SDCSolutions.xml</DocumentationFile>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\Net4.5\</OutputPath>
+    <DefineConstants>TRACE;PD, NOVJSLIB</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Release\SDCSolutions.xml</DocumentationFile>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Test|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Test\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;PD, TEST, NOVJSLIB</DefineConstants>
+    <DocumentationFile>bin\Debug\PublicDomain.XML</DocumentationFile>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisRuleAssemblies>
+    </CodeAnalysisRuleAssemblies>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;NOVJSLIB</DefineConstants>
+    <DocumentationFile>bin\Debug\SDCSolutions.xml</DocumentationFile>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE;PD, NOVJSLIB</DefineConstants>
+    <DocumentationFile>bin\Release\SDCSolutions.xml</DocumentationFile>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Test|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Test\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;PD, TEST, NOVJSLIB</DefineConstants>
+    <DocumentationFile>bin\Debug\PublicDomain.XML</DocumentationFile>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisRuleAssemblies>
+    </CodeAnalysisRuleAssemblies>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Archiver.cs" />
+    <Compile Include="ArrayUtilities.cs" />
+    <Compile Include="AspRuntimeHost\wwAspRuntimeHost.cs" />
+    <Compile Include="AspRuntimeHost\wwAspRuntimeProxy.cs" />
+    <Compile Include="AspRuntimeHost\wwWorkerRequest.cs" />
+    <Compile Include="Certificate.cs" />
+    <Compile Include="Country.cs" />
+    <Compile Include="DisposableCallback.cs" />
+    <Compile Include="EcmaScript\EcmaScriptAssignmentStatement.cs" />
+    <Compile Include="EcmaScript\EcmaScriptBlock.cs" />
+    <Compile Include="EcmaScript\EcmaScriptBreakStatement.cs" />
+    <Compile Include="EcmaScript\EcmaScriptCaseStatement.cs" />
+    <Compile Include="EcmaScript\EcmaScriptCatchStatement.cs" />
+    <Compile Include="EcmaScript\EcmaScriptCharacterLiteral.cs" />
+    <Compile Include="EcmaScript\EcmaScriptComment.cs" />
+    <Compile Include="EcmaScript\EcmaScriptContinueStatement.cs" />
+    <Compile Include="EcmaScript\EcmaScriptDecimalLiteral.cs" />
+    <Compile Include="EcmaScript\EcmaScriptDoWhileStatement.cs" />
+    <Compile Include="EcmaScript\EcmaScriptEmptyStatement.cs" />
+    <Compile Include="EcmaScript\EcmaScriptExceptionStatement.cs" />
+    <Compile Include="EcmaScript\EcmaScriptFinallyStatement.cs" />
+    <Compile Include="EcmaScript\EcmaScriptFloatLiteral.cs" />
+    <Compile Include="EcmaScript\EcmaScriptForStatement.cs" />
+    <Compile Include="EcmaScript\EcmaScriptFunction.cs" />
+    <Compile Include="EcmaScript\EcmaScriptGotoStatement.cs" />
+    <Compile Include="EcmaScript\EcmaScriptIdentifier.cs" />
+    <Compile Include="EcmaScript\EcmaScriptIfStatement.cs" />
+    <Compile Include="EcmaScript\EcmaScriptLabelStatement.cs" />
+    <Compile Include="EcmaScript\EcmaScriptLiteral.cs" />
+    <Compile Include="EcmaScript\EcmaScriptNode.cs" />
+    <Compile Include="EcmaScript\EcmaScriptOperator.cs" />
+    <Compile Include="EcmaScript\EcmaScriptProgram.cs" />
+    <Compile Include="EcmaScript\EcmaScriptReturnStatement.cs" />
+    <Compile Include="EcmaScript\EcmaScriptSourceElement.cs" />
+    <Compile Include="EcmaScript\EcmaScriptStatement.cs" />
+    <Compile Include="EcmaScript\EcmaScriptStringLiteral.cs" />
+    <Compile Include="EcmaScript\EcmaScriptSwitchStatement.cs" />
+    <Compile Include="EcmaScript\EcmaScriptThrowStatement.cs" />
+    <Compile Include="EcmaScript\EcmaScriptWhileStatement.cs" />
+    <Compile Include="EcmaScript\EcmaScriptWhitespace.cs" />
+    <Compile Include="EcmaScript\LenientEcmaScriptDocument.cs" />
+    <Compile Include="Exceptions\BaseException.cs" />
+    <Compile Include="CachedPropertiesProvider.cs" />
+    <Compile Include="CharUtilities.cs" />
+    <Compile Include="Code\CodeCount\Countable.cs" />
+    <Compile Include="Code\CodeCount\CountableDirectory.cs" />
+    <Compile Include="Code\CodeCount\CountableFile.cs" />
+    <Compile Include="Code\CodeCount\CountStream.cs" />
+    <Compile Include="Code\CodeCount\CountStreamType.cs" />
+    <Compile Include="Code\CodeCount\DepthFirstCountStream.cs" />
+    <Compile Include="Code\CodeCount\DotNetProject.cs" />
+    <Compile Include="Code\CodeCount\DotNetSolution.cs" />
+    <Compile Include="Code\CodeCount\ICountable.cs" />
+    <Compile Include="Config\ConfigurationValues.cs" />
+    <Compile Include="ConsoleRerouter.cs" />
+    <Compile Include="ConversionUtilities.cs" />
+    <Compile Include="Crc32.cs" />
+    <Compile Include="CryptographyUtilities.cs" />
+    <Compile Include="CultureConstants.cs" />
+    <Compile Include="CurrentDirectoryRerouter.cs" />
+    <Compile Include="Data\Blob.cs" />
+    <Compile Include="Data\ConnectionScopedDatabase.cs" />
+    <Compile Include="Data\ConnectionScopedDatabaseConnectionProvider.cs" />
+    <Compile Include="Data\DatabaseNexus.cs" />
+    <Compile Include="Data\DatabaseFeature.cs" />
+    <Compile Include="Data\DatabaseType.cs" />
+    <Compile Include="Data\DbConnectionScope.cs" />
+    <Compile Include="Data\DbTransactionScope.cs" />
+    <Compile Include="Data\DynamicDbProviderFactory.cs" />
+    <Compile Include="Data\IDatabase.cs" />
+    <Compile Include="Data\IDatabaseConnectionProvider.cs" />
+    <Compile Include="Data\IDataTable.cs" />
+    <Compile Include="Data\QueryBuilder.cs" />
+    <Compile Include="Data\SQLHelper.cs" />
+    <Compile Include="Code\CodeUtilities.cs" />
+    <Compile Include="Code\DotNetCodeRunner.cs" />
+    <Compile Include="Code\ICodeRunner.cs" />
+    <Compile Include="Exceptions\TODONotImplementedException.cs" />
+    <Compile Include="Exceptions\WrappedException.cs" />
+    <Compile Include="Feeder\AtomFeed.cs" />
+    <Compile Include="Feeder\AtomFeedItem.cs" />
+    <Compile Include="Feeder\Atom\AtomFeedParser.cs" />
+    <Compile Include="Feeder\Atom\IAtomCategory.cs" />
+    <Compile Include="Feeder\Atom\IAtomContent.cs" />
+    <Compile Include="Feeder\Atom\IAtomGenerator.cs" />
+    <Compile Include="Feeder\Atom\IAtomLink.cs" />
+    <Compile Include="Feeder\Atom\IAtomPerson.cs" />
+    <Compile Include="Feeder\Atom\IAtomText.cs" />
+    <Compile Include="Feeder\DistilledFeed.cs" />
+    <Compile Include="Feeder\DistilledFeedItem.cs" />
+    <Compile Include="Feeder\Feed.cs" />
+    <Compile Include="Feeder\FeedItem.cs" />
+    <Compile Include="Feeder\FeedParser.cs" />
+    <Compile Include="Feeder\FeedSerializer.cs" />
+    <Compile Include="Feeder\IAtomFeed.cs" />
+    <Compile Include="Feeder\IAtomFeedItem.cs" />
+    <Compile Include="Feeder\IDistilledFeed.cs" />
+    <Compile Include="Feeder\IDistilledFeedItem.cs" />
+    <Compile Include="Feeder\IFeed.cs" />
+    <Compile Include="Feeder\IFeedItem.cs" />
+    <Compile Include="Feeder\IOpmlFeed.cs" />
+    <Compile Include="Feeder\IParser.cs" />
+    <Compile Include="Feeder\IRssFeed.cs" />
+    <Compile Include="Feeder\IRssFeedItem.cs" />
+    <Compile Include="Feeder\IXmlFeed.cs" />
+    <Compile Include="Feeder\OpmlFeed.cs" />
+    <Compile Include="Feeder\OpmlSerializer.cs" />
+    <Compile Include="Feeder\Opml\IOpmlBody.cs" />
+    <Compile Include="Feeder\Opml\IOpmlHead.cs" />
+    <Compile Include="Feeder\Opml\IOpmlOutline.cs" />
+    <Compile Include="Feeder\Opml\IOpmlOutlineProvider.cs" />
+    <Compile Include="Feeder\Opml\OpmlParser.cs" />
+    <Compile Include="Feeder\Parser.cs" />
+    <Compile Include="Feeder\RssFeed.cs" />
+    <Compile Include="Feeder\RssFeedItem.cs" />
+    <Compile Include="Feeder\Rss\IRssCategory.cs" />
+    <Compile Include="Feeder\Rss\IRssCloud.cs" />
+    <Compile Include="Feeder\Rss\IRssEnclosure.cs" />
+    <Compile Include="Feeder\Rss\IRssGuid.cs" />
+    <Compile Include="Feeder\Rss\IRssImage.cs" />
+    <Compile Include="Feeder\Rss\IRssSource.cs" />
+    <Compile Include="Feeder\Rss\IRssTextInput.cs" />
+    <Compile Include="Feeder\Rss\RssFeedParser.cs" />
+    <Compile Include="Feeder\Serializer.cs" />
+    <Compile Include="Feeder\SerializeType.cs" />
+    <Compile Include="IMonotonicNumberGenerator.cs" />
+    <Compile Include="INumberGenerator.cs" />
+    <Compile Include="IRandomNumberGenerator.cs" />
+    <Compile Include="Util\DumpFormat.cs" />
+    <Compile Include="Util\StringContainer.cs" />
+    <Compile Include="Web\Doctype.cs" />
+    <Compile Include="Web\LiteralControlOnRender.cs" />
+    <Compile Include="Web\RTESupport.cs" />
+    <Compile Include="Xml\LenientHtmlDocument.cs" />
+    <Compile Include="Xml\LenientHtmlToTextDocument.cs" />
+    <Compile Include="Xml\LenientXmlDocument.cs" />
+    <Compile Include="Logging\ApplicationLogger.cs" />
+    <Compile Include="Logging\CompositeLogger.cs" />
+    <Compile Include="Logging\ConsoleLogger.cs" />
+    <Compile Include="Logging\CriticalLogger.cs" />
+    <Compile Include="Logging\DefaultLogFilter.cs" />
+    <Compile Include="Logging\DefaultLogFormatter.cs" />
+    <Compile Include="Logging\EventLogLogger.cs" />
+    <Compile Include="Logging\EventLogSource.cs" />
+    <Compile Include="Logging\FileLogger.cs" />
+    <Compile Include="Logging\FileSizeRollOverStrategy.cs" />
+    <Compile Include="FinalizableBackgroundThread.cs" />
+    <Compile Include="Logging\ILogFilter.cs" />
+    <Compile Include="Logging\ILogFormatter.cs" />
+    <Compile Include="Logging\ILogTimestampProvider.cs" />
+    <Compile Include="Logging\IRollOverStrategy.cs" />
+    <Compile Include="Logging\LocalLogTimestampProvider.cs" />
+    <Compile Include="Logging\LogArtifact.cs" />
+    <Compile Include="Logging\LogFormatter.cs" />
+    <Compile Include="Logging\Logger.cs" />
+    <Compile Include="Logging\LoggerBackgroundThread.cs" />
+    <Compile Include="Logging\LoggerSeverity.cs" />
+    <Compile Include="Logging\LoggingConfig.cs" />
+    <Compile Include="Logging\NullLogger.cs" />
+    <Compile Include="Logging\RollingFileLogger.cs" />
+    <Compile Include="Logging\SevereLogFilter.cs" />
+    <Compile Include="Logging\SimpleCompositeLogger.cs" />
+    <Compile Include="Logging\SimpleLogFormatter.cs" />
+    <Compile Include="Logging\StringLogger.cs" />
+    <Compile Include="Logging\TextWriterLogger.cs" />
+    <Compile Include="Logging\TzSensitiveTimestampProvider.cs" />
+    <Compile Include="Logging\UtcLogTimestampProvider.cs" />
+    <Compile Include="LogicalDisposeScope.cs" />
+    <Compile Include="LogicalTransactionScope.cs" />
+    <Compile Include="RevertAsserts.cs" />
+    <Compile Include="ScreenScraper\ScrapedPage.cs" />
+    <Compile Include="ScreenScraper\Scraper.cs" />
+    <Compile Include="ScreenScraper\ScrapeSession.cs" />
+    <Compile Include="ScreenScraper\ScrapeType.cs" />
+    <Compile Include="ScreenScraper\ScreenScraperTag.cs" />
+    <Compile Include="TransactionCombinationLogic.cs" />
+    <Compile Include="TzConstants.cs" />
+    <Compile Include="TzDatabase.cs" />
+    <Compile Include="TzDateTime.cs" />
+    <Compile Include="Web\AuthenticatedWebIpProvider.cs" />
+    <Compile Include="Web\Cursors.cs" />
+    <Compile Include="DateTimeUtlities.cs" />
+    <Compile Include="DisposableReaderWriter.cs" />
+    <Compile Include="DistanceType.cs" />
+    <Compile Include="ExceptionUtilities.cs" />
+    <Compile Include="FileSystemUtilities.cs" />
+    <Compile Include="General.cs" />
+    <Compile Include="GenericUtilities.cs" />
+    <Compile Include="GlobalConstants.cs" />
+    <Compile Include="ICachedPropertiesProvider.cs" />
+    <Compile Include="IExposesReaderWriterLock.cs" />
+    <Compile Include="IInitializable.cs" />
+    <Compile Include="InvariantCultureContext.cs" />
+    <Compile Include="Iso3166.cs" />
+    <Compile Include="Iso6709.cs" />
+    <Compile Include="Iso8601.cs" />
+    <Compile Include="Code\Language.cs" />
+    <Compile Include="LatitudeLongitudePoint.cs" />
+    <Compile Include="ManagementUtilities.cs" />
+    <Compile Include="Month.cs" />
+    <Compile Include="ObjectUtilities.cs" />
+    <Compile Include="Pair.cs" />
+    <Compile Include="PendingPublicDomainAttribute.cs" />
+    <Compile Include="ProcessHelper.cs" />
+    <Compile Include="PublicDomain.cs" />
+    <Compile Include="AssemblyInfo.cs" />
+    <Compile Include="Quadruple.cs" />
+    <Compile Include="RandomGenerationUtilities.cs" />
+    <Compile Include="ReadOnlyDictionary.cs" />
+    <Compile Include="ReadOnlyICollection.cs" />
+    <Compile Include="ReflectionUtilities.cs" />
+    <Compile Include="RegexUtilities.cs" />
+    <Compile Include="StringUtilities.cs" />
+    <Compile Include="ThreadingUtilities.cs" />
+    <Compile Include="Triple.cs" />
+    <Compile Include="TzTimeZone.cs" />
+    <Compile Include="UnitedStatesUtilities.cs" />
+    <Compile Include="VersionUtilities.cs" />
+    <Compile Include="Web\DnsUtilities.cs" />
+    <Compile Include="Web\IIpProvider.cs" />
+    <Compile Include="Web\WebConstants.cs" />
+    <Compile Include="Web\WebIpProvider.cs" />
+    <Compile Include="Web\WebUtilities.cs" />
+    <Compile Include="Win32.cs" />
+    <Compile Include="Xml\NonEntityResolvingXmlTextReader.cs" />
+    <Compile Include="Xml\SimpleXmlResolver.cs" />
+    <Compile Include="Xml\XmlUtilities.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="doc\Documentation.chm" />
+    <None Include="Migrated rules for Amcom.SDC.CodeUtilities.ruleset" />
+    <None Include="PublicDomain.snk" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="pd.ico" />
+    <Content Include="README.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Properties\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

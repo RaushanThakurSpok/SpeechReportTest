@@ -1,0 +1,272 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{4A94F9DD-BC92-495D-9928-FC93B5B28410}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Amcom.SDC.BaseServices</RootNamespace>
+    <AssemblyName>Amcom.SDC.BaseServices</AssemblyName>
+    <MyType>Windows</MyType>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>sdc.snk.pfx</AssemblyOriginatorKeyFile>
+    <IsWebBootstrapper>true</IsWebBootstrapper>
+    <PublishUrl>http://localhost/SDCSolutions.BaseServices/</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Web</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>SDCSolutions.Services.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022,42353,42354,42355</NoWarn>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>SDCSolutions.Services.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022,42353,42354,42355</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DocumentationFile>SDCSolutions.Services.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022,42353,42354,42355</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisRuleAssemblies>C:\Program Files (x86)\Microsoft Visual Studio 9.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleAssemblies>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.vb</CodeAnalysisModuleSuppressionsFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DocumentationFile>SDCSolutions.Services.xml</DocumentationFile>
+    <Optimize>true</Optimize>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022,42353,42354,42355</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisRuleAssemblies>C:\Program Files (x86)\Microsoft Visual Studio 9.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleAssemblies>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.vb</CodeAnalysisModuleSuppressionsFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization.Formatters.Soap" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Linq" />
+    <Import Include="Utilities" />
+    <Import Include="Utilities.AspRuntimeHost" />
+    <Import Include="Utilities.Code" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Application Lifetime\AlternateLogFolder.vb" />
+    <Compile Include="Application Lifetime\APIVersion.vb" />
+    <Compile Include="Application Lifetime\AppAlreadyRunningException.vb" />
+    <Compile Include="Application Lifetime\Application.vb" />
+    <Compile Include="Interfaces\IStatistics.vb" />
+    <Compile Include="Networking\ClientConnection.vb" />
+    <Compile Include="Networking\ClientDataReceivedEventArgs.vb" />
+    <Compile Include="Application Lifetime\ComponentInfo.vb" />
+    <Compile Include="Application Lifetime\ConfigFile.vb" />
+    <Compile Include="Notifications\EmailNotification.vb" />
+    <Compile Include="Notifications\NotificationCompletedEventArgs.vb" />
+    <Compile Include="Security\Encryption.vb" />
+    <Compile Include="Application Lifetime\ExceptionPublisherForm.designer.vb">
+      <DependentUpon>ExceptionPublisherForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Application Lifetime\ExceptionPublisherForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Utility\BackwordReader.vb" />
+    <Compile Include="Utility\FileLock.vb" />
+    <Compile Include="Networking\FtpClient.vb" />
+    <Compile Include="Interfaces\IMailProvider.vb" />
+    <Compile Include="Application Lifetime\InvalidConfigurationParameterException.vb" />
+    <Compile Include="Interfaces\IPagerProvider.vb" />
+    <Compile Include="Messaging Daemon\MessageDaemonMessageArgs.vb" />
+    <Compile Include="Messaging Daemon\MessagingDaemon.vb" />
+    <Compile Include="Messaging Daemon\MessagingDaemonClient.vb" />
+    <Compile Include="Messaging Daemon\MessagingDaemonErrorArgs.vb" />
+    <Compile Include="Messaging Daemon\MessagingDaemonMessage.vb" />
+    <Compile Include="Messaging Daemon\MessagingDaemonMessages.vb" />
+    <Compile Include="Application Lifetime\modSDCSolutionsGeneral.vb" />
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Application Lifetime\Configuration.vb" />
+    <Compile Include="Notifications\NotifierFailedException.vb" />
+    <Compile Include="Utility\Parameter.vb" />
+    <Compile Include="Utility\Parameters.vb" />
+    <Compile Include="Utility\PickListKeyEncoder.vb" />
+    <Compile Include="Utility\PropertyBag.vb" />
+    <Compile Include="Utility\PropertyEditorBase.vb" />
+    <Compile Include="Threading\SafeThreading.vb" />
+    <Compile Include="Application Lifetime\AmcomException.vb" />
+    <Compile Include="Networking\Client.vb" />
+    <Compile Include="Networking\Daemon.vb" />
+    <Compile Include="Notifications\PageNotification.vb" />
+    <Compile Include="Networking\SMTPSender.vb" />
+    <Compile Include="Application Lifetime\SyslogSender.vb" />
+    <Compile Include="Networking\TCPConnectionStateEventArgs.vb" />
+    <Compile Include="Networking\TCPDataReceivedEventArgs.vb" />
+    <Compile Include="Networking\TCPErrorEventArgs.vb" />
+    <Compile Include="Application Lifetime\TraceMessageEventArgs.vb" />
+    <Compile Include="Networking\UDPListener.vb" />
+    <Compile Include="Networking\UDPListenerMessageReceivedEventArgs.vb" />
+    <Compile Include="Application Lifetime\UDPLogger.vb">
+    </Compile>
+    <Compile Include="Utility\Tuple.vb" />
+    <Compile Include="Utility\Utility.vb" />
+    <Compile Include="Utility\WinConnectInfo.vb" />
+    <Compile Include="Networking\FTPClientDownloadProgressEventArgs.vb" />
+    <Compile Include="Networking\XmlMessageArgs.vb" />
+    <Compile Include="Networking\XmlMessagingDaemon.vb" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Application Lifetime\ExceptionPublisherForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ExceptionPublisherForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sdclogo.bmp" />
+    <None Include="sdc.snk.pfx" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="Utilities\Amcom.SDC.CodeUtilities.csproj">
+      <Project>{DB173085-8CC4-4C49-8AA4-328442ABC887}</Project>
+      <Name>Amcom.SDC.CodeUtilities</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\amcom-logo-small.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\amcom-new-logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\warning-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\exclamationIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
